@@ -1,0 +1,491 @@
+# Spanish translations for PACKAGE package.
+# Copyright (C) 2025 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# correoargentino, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-12 16:48-0300\n"
+"PO-Revision-Date: 2025-05-12 16:48-0300\n"
+"Last-Translator: correoargentino\n"
+"Language-Team: Argentinian\n"
+"Language: es_AR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.3\n"
+"X-Poedit-Basepath: ../..\n"
+"X-Poedit-SearchPath-0: .\n"
+
+msgid "Do you want to use the Correo Argentino Office quote tool?"
+msgstr "¿Querés usar la herramienta de cotización de Correo Argentino?"
+
+msgid "Agree"
+msgstr "Acuerdo"
+
+msgid "API KEY"
+msgstr "Clave API"
+
+msgid "User"
+msgstr "Usuario"
+
+msgid "Password"
+msgstr "Contraseña"
+
+msgid "Select an option"
+msgstr "Seleccioná una opción"
+
+msgid "Service"
+msgstr "Servicio"
+
+msgid "Yes"
+msgstr "Si"
+
+msgid "No"
+msgstr "No"
+
+msgid "When integrating the quote system, the calculation is performed by the Correo Argentino API"
+msgstr "Al integrar el cotizador el cálculo es realizado por la API de Correo Argentino"
+
+msgid "Document Type"
+msgstr "Tipo de Documento"
+
+msgid "Choose CUIT if you want to operate as Monotributista or Responsable Inscripto."
+msgstr "Elegí CUIT si querés operar como Monotributista o Responsable Inscripto."
+
+msgid "Document Number"
+msgstr "Número de Documento"
+
+msgid "If you choose CUIT, enter it without hyphens."
+msgstr "Si elegís CUIT solo agregá el mismo sin guiones"
+
+msgid "First Name"
+msgstr "Nombre"
+
+msgid "You can enter a personal or business name."
+msgstr "Podés ingresar un nombre personal o comercial."
+
+msgid "Last Name"
+msgstr "Apellido"
+
+msgid "This field is required for final consumers."
+msgstr "Este campo es requerido para consumidor final."
+
+msgid "Street"
+msgstr "Calle"
+
+msgid "Street Number"
+msgstr "Altura"
+
+msgid "Floor"
+msgstr "Piso"
+
+msgid "Apartment"
+msgstr "Departamento"
+
+msgid "City"
+msgstr "Ciudad"
+
+msgid "Province"
+msgstr "Provincia"
+
+msgid "ZIP Code"
+msgstr "Código Postal"
+
+msgid "Phone"
+msgstr "Teléfono"
+
+msgid "Mobile Phone"
+msgstr "Celular"
+
+msgid "Name"
+msgstr "Nombre"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Use the following format: correoargentino@correo.com"
+msgstr "Usá el siguiente formato: correoargentino@correo.com"
+
+msgid "Use the following format: LNNNNLLL or NNNN. e.g.: 1190 or A1190NNC"
+msgstr "Usá el siguiente formato: LNNNNLLL o NNNN. ej: 1190 o A1190NNC"
+
+msgid "If you don’t know your ZIP code, check <a href=\"https://www.correoargentino.com.ar/formularios/cpa\">here</a>"
+msgstr "Si no conocés tu CP consultá <a href=\"https://www.correoargentino.com.ar/formularios/cpa\">aquí</a>"
+
+msgid "Use the following format: 9999-99999999"
+msgstr "Usá el siguiente formato: 9999-99999999"
+
+msgid "Store description"
+msgstr "Descripción en tienda"
+
+msgid "Name displayed to buyers at checkout when selecting the required method"
+msgstr "Nombre visualizado por compradores en tienda al seleccionar el método requerido"
+
+msgid "Observation"
+msgstr "Observación"
+
+msgid "The observation must not exceed 150 characters"
+msgstr "La observación no puede superar los 150 caracteres"
+
+msgid "Correo Argentino. Argentina must be the origin country."
+msgstr "Correo Argentino. Argentina tiene que ser el pais de Origen."
+
+msgid "Now select which service you want to use."
+msgstr "Ahora seleccioná con cuál servicio querés operar."
+
+msgid "You can now operate in MiCorreo. Update this data only if you want to renew the session."
+msgstr "Ya podés operar en MiCorreo, actualizá estos datos solo si deseas renovar la sesión."
+
+msgid "Now add your business information."
+msgstr "Ahora agregá los datos de tu negocio."
+
+msgid "Business Data"
+msgstr "Datos Comerciales"
+
+msgid "The password must be at least 6 characters long"
+msgstr "La contraseña debe tener al menos 6 caracteres"
+
+msgid "The password must not exceed 20 characters"
+msgstr "La contraseña no puede tener más de 20 caracteres"
+
+msgid "One or more packages exceed the maximum weight and/or dimensions allowed by Correo Argentino"
+msgstr "Uno o más paquetes exceden el peso y/o medidas máximas permitidas por Correo Argentino"
+
+msgid "Correo Argentino. When selecting delivery to a branch, you must choose a province and a destination branch."
+msgstr "La sucursal seleccionada no se encuentra disponible momentaneamente, intente nuevamente o seleccione otra."
+
+msgid "OOPS, %d kg exceeds the maximum weight of %d kg for %s"
+msgstr "OOPS, %d kg increase the maximum weight of %d kg for %s"
+
+msgid "The order has not been pre-registered yet."
+msgstr "La orden no ha sido preimpuesta aún."
+
+msgid "The order has not been imported yet."
+msgstr "La orden no ha sido importada aún."
+
+msgid "The order does not have Correo Argentino as the shipping method"
+msgstr "La orden no tiene a Correo Argentino como método de envío"
+
+msgid "Tracking"
+msgstr "Tracking"
+
+msgid "Reference"
+msgstr "Referencia"
+
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgid "Official Correo Argentino plugin for WooCommerce"
+msgstr "Plugin oficial de Correo Argentino para WooCommerce"
+
+msgid "Don't have an account yet?"
+msgstr "¿No tenés una cuenta todavía?"
+
+msgid "Create new account"
+msgstr "Crear nueva cuenta"
+
+msgid "Shipping:"
+msgstr "Envío:"
+
+msgid "Shipping Settings"
+msgstr "Ajustes de Envío"
+
+msgid "Default weight (kg)"
+msgstr "Peso por defecto (kg)"
+
+msgid "Default height (cm)"
+msgstr "Altura por defecto (cm)"
+
+msgid "Default width (cm)"
+msgstr "Ancho por defecto (cm)"
+
+msgid "Default length (cm)"
+msgstr "Largo por defecto (cm)"
+
+msgid "The weight must be between 0.01 and 50 kg."
+msgstr "El peso debe estar entre 0.01 y 50 kg."
+
+msgid "The dimensions must be between 0.01 and 200 cm."
+msgstr "Las dimensiones deben estar entre 0.01 y 200 cm."
+
+msgid "Enable default values"
+msgstr "Activar valores por defecto"
+
+msgid "Default values for products without data"
+msgstr "Valores por Defecto para Productos sin Datos"
+
+msgid "The system requires weight and dimensions to process shipments. If a product does not have this data loaded, the default values configured below will be applied to ensure the continuity of rate calculation."
+msgstr "El sistema requiere peso y dimensiones para procesar los envíos. Si un producto no tiene estos datos cargados, se aplicarán los valores por defecto configurados a continuación para garantizar la continuidad del cálculo de tarifas."
+
+msgid "Save default values"
+msgstr "Guardar valores por defecto"
+
+msgid "Shipping Adjustment Configuration"
+msgstr "Configuración de Ajuste en Envío"
+
+msgid "Shipping Adjustments"
+msgstr "Ajustes de Envío"
+
+msgid "Enable adjustment"
+msgstr "Habilitar ajuste"
+
+msgid "Adjustment Type"
+msgstr "Tipo de ajuste"
+
+msgid "Surcharge"
+msgstr "Recargo"
+
+msgid "Discount"
+msgstr "Descuento"
+
+msgid "Shipping Surcharge / Discount Adjustments"
+msgstr "Ajustes de Recargo / Descuento en Envío"
+
+msgid "Minimum order amount"
+msgstr "Monto mínimo del pedido"
+
+msgid "Percentage (%)"
+msgstr "Porcentaje (%)"
+
+msgid "Shipping method:"
+msgstr "Método de envío:"
+
+msgid "The following problems were found:"
+msgstr "Se encontraron los siguientes problemas:"
+
+msgid "To get the shipping cost by Correo Argentino, complete the address details"
+msgstr "Para obtener el costo de envío por Correo Argentino, completá los datos de la dirección"
+msgid "Configure free shipping for MiCorreo. If the total order amount reaches or exceeds the defined value, the customer will not be charged for shipping."
+msgstr "Configure el envío gratuito para MiCorreo. Si el monto total del pedido alcanza o supera el valor indicado, el comprador no abonará costos de envío."
+
+msgid "Free Shipping Settings"
+msgstr "Configuración de Envío Gratuito"
+
+msgid "Enter the minimum amount (e.g. 3500.50)"
+msgstr "Ingrese el importe mínimo (ej. 3500.50)"
+
+msgid "Configure a percentage surcharge or discount on the base shipping cost returned by MiCorreo. The adjustment will only apply if the indicated minimum amount is reached."
+msgstr "Configure un recargo o descuento porcentual sobre el costo de envío base devuelto por MiCorreo. El ajuste se aplicará solo si se alcanza el monto mínimo indicado."
+
+msgid "Automatic status change after successful shipment to MiCorreo."
+msgstr "Cambio automático de estado tras envío exitoso a MiCorreo."
+
+msgid "The status was not changed. Configured status is invalid."
+msgstr "No se cambió el estado. Estado configurado inválido."
+
+msgid "Configure the automatic status change of orders when sent to MiCorreo."
+msgstr "Configura el cambio automático de estado de los pedidos al ser enviados a MiCorreo."
+
+msgid "Configuration saved."
+msgstr "Configuración guardada."
+
+msgid "Automatic Status Change"
+msgstr "Cambio Automático de Estado"
+
+msgid "New order status"
+msgstr "Nuevo estado del pedido"
+
+msgid "Unauthorized."
+msgstr "No autorizado."
+
+msgid "The order could not be sent: unknown service."
+msgstr "No se pudo enviar el pedido: servicio desconocido."
+
+msgid "Order automatically sent to MiCorreo."
+msgstr "Pedido enviado automáticamente a MiCorreo."
+
+msgid "Error sending order automatically to MiCorreo: "
+msgstr "Error al enviar pedido automáticamente a MiCorreo: "
+
+msgid "Settings saved successfully."
+msgstr "Configuración guardada correctamente."
+
+msgid "Automatic Order Sending"
+msgstr "Envío Automático de Pedidos"
+
+msgid "This functionality allows orders to be automatically sent to MiCorreo when they change to a specific status, streamlining shipment management."
+msgstr "Esta funcionalidad permite que los pedidos se envíen automáticamente a MiCorreo cuando cambian a un estado determinado, facilitando la gestión de envíos."
+
+msgid "Activation Status"
+msgstr "Estado de activación"
+
+msgid "When the order changes to this status, it will be automatically sent to MiCorreo."
+msgstr "Cuando el pedido cambie al estado seleccionado, se enviará automáticamente a MiCorreo."
+
+msgid "Prefixed ID sent to Mail: %s"
+msgstr "ID con prefijo enviado a Correo: %s"
+
+msgid "MiCorreo Reference ID:"
+msgstr "MiCorreo ID Referencia:"
+
+msgid "Prefixed ID sent"
+msgstr "ID enviado con prefijo"
+
+msgid "Order Prefix Settings"
+msgstr "Configuración de Prefijo de Pedidos"
+
+msgid "Add a prefix to the order number to facilitate tracking or distinguish orders by store or channel."
+msgstr "Agrega un prefijo al número de pedido para facilitar su seguimiento o distinguir pedidos por tienda o canal."
+
+msgid "Prefix"
+msgstr "Prefijo"
+
+msgid "For the prefix field letters and numbers are allowed (maximum 5). Example: TIEN1"
+msgstr "Para el campo prefijo se permiten letras y números (máximo 5). Ejemplo: TIEN1"
+
+msgid "Save Changes"
+msgstr "Guardar cambios"
+
+msgid "Complete Plugin Uninstallation"
+msgstr "Desinstalación Completa del Plugin"
+
+msgid "Enable this if you want to delete all plugin data upon uninstallation. This option is useful if you plan to remove the plugin and do not need to retain any settings or data."
+msgstr "Activarlo si deseas eliminar todos los datos del plugin al desinstalarlo. Esta opción es útil si planeas eliminar el plugin y no necesitas conservar ninguna configuración o datos."
+
+msgid "Enable this option to delete all plugin data and settings when the plugin is removed."
+msgstr "Activá esta opción para eliminar todos los datos y configuraciones del plugin al desinstalarlo."
+
+msgid "You have selected to delete all plugin data. This action is irreversible upon uninstallation."
+msgstr "Has seleccionado eliminar todos los datos del complemento. Esta acción es irreversible tras la desinstalación."
+
+msgid "Invalid nonce. Unauthorized action."
+msgstr "Nonce inválido. Acción no autorizada."
+
+msgid "Order not found."
+msgstr "Pedido no encontrado."
+
+msgid "The shipping reference was manually deleted, and the order was hidden from the Correo Argentino list."
+msgstr "La referencia de envío fue eliminada manualmente y el pedido fue ocultado del listado de Correo Argentino."
+
+msgid "Insufficient permissions."
+msgstr "Permisos insuficientes."
+
+msgid "The order was manually restored and is now visible again in the Correo Argentino list."
+msgstr "El pedido fue restaurado manualmente y ahora es visible nuevamente en el listado de Correo Argentino."
+
+msgid "Bulk actions"
+msgstr "Acciones en lote"
+
+msgid "Import"
+msgstr "Importar"
+
+msgid "Restore hidden orders"
+msgstr "Restaurar pedidos ocultos"
+
+msgid "Show hidden"
+msgstr "Mostrar ocultos"
+
+msgid "The shipping reference was successfully deleted."
+msgstr "La referencia de envío fue eliminada correctamente."
+
+msgid "Correo Argentino Orders"
+msgstr "Órdenes de Correo Argentino"
+
+msgid "Are you sure you want to restore all hidden orders? This action cannot be undone."
+msgstr "¿Estás seguro de que querés restaurar todos los pedidos ocultos? Esta acción no se puede deshacer."
+
+msgid "The order was successfully canceled."
+msgstr "La orden fue cancelada correctamente."
+
+msgid "Apply"
+msgstr "Aplicar"
+
+msgid "Cannot delete: already shipped or invalid status"
+msgstr "No se puede eliminar: ya fue enviado o estado inválido"
+
+msgid "Delete shipping reference"
+msgstr "Eliminar referencia de envío"
+
+msgid "Are you sure you want to delete the reference?"
+msgstr "¿Seguro que querés eliminar la referencia?"
+
+msgid "View order details"
+msgstr "Ver detalle del pedido"
+
+msgid "All hidden orders have been successfully restored."
+msgstr "Todos los pedidos ocultos han sido restaurados correctamente."
+
+msgid "You are going to cancel the order"
+msgstr "Vas a cancelar la orden"
+
+msgid "Do you wish to continue?"
+msgstr "¿Deseas continuar?"
+
+msgid "Discard"
+msgstr "Descartar"
+
+msgid "Accept"
+msgstr "Aceptar"
+
+msgid "Dimensions"
+msgstr "Dimensiones"
+
+msgid "Weight"
+msgstr "Peso"
+
+msgid "Reference / MiCorreo ID"
+msgstr "Referencia / MiCorreo ID"
+
+msgid "Export to CSV"
+msgstr "Exportar a CSV"
+
+msgid "The postal code must contain exactly 4 numbers."
+msgstr "El código postal debe contener exactamente 4 números."
+
+msgid "Free shipping Correo Argentino"
+msgstr "Envío gratis Correo Argentino"
+
+msgid "Use a prefix for order numbers"
+msgstr "Utilice un prefijo para los números de pedido"
+
+msgid "Activate free shipping threshold"
+msgstr "Activar envío gratis a partir del monto"
+
+msgid "The order could not be imported #%1$d: %2$s"
+msgstr "No se pudo importar la orden #%1$d: %2$s"
+
+msgid "Unexpected error importing order #%1$d: %2$s"
+msgstr "Error inesperado al importar la orden #%1$d: %2$s"
+
+msgid "Unknown error"
+msgstr "Error desconocido"
+
+msgid "The product %s has no configured weight."
+msgstr "El producto %s no tiene peso configurado."
+
+msgid "Correo Argentino"
+msgstr "Correo Argentino"
+
+msgid "The %s plugin requires WooCommerce to be active."
+msgstr "El plugin %s requiere que WooCommerce esté activo."
+
+msgid "Dashboard"
+msgstr "Panel"
+
+msgid "API Connection"
+msgstr "Conexión API"
+
+msgid "Commercial Data"
+msgstr "Datos Comerciales"
+
+msgid "Commercial Data MiCorreo"
+msgstr "Datos Comerciales MiCorreo"
+
+msgid "Commercial Data Paq.Ar"
+msgstr "Datos Comerciales Paq.Ar"
+
+msgid "Unauthorized or session expired."
+msgstr "No autorizado o la sesión ha expirado."
+
+msgid "Enable Sandbox Mode"
+msgstr "Habilitar modo Desarrollo"
+
+msgid "Sandbox Mode"
+msgstr "Modo Desarrollo"
+
+msgid "Once logged in, to perform the environment change, it is necessary to disable and re-enable the plugin."
+msgstr "Una vez logueado, para realizar el cambio de entorno es necesario deshabilitar y volver a habilitar el plugin."

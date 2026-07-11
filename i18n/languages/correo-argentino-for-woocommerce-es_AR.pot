@@ -1,0 +1,370 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-12 16:02-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: Helper/correoargentino-list-table.php:172
+msgid "Compact view"
+msgstr ""
+
+#: Helper/correoargentino-list-table.php:173
+msgid "Extended view"
+msgstr ""
+
+#: Helper/correoargentino-list-table.php:349
+msgid "No items found."
+msgstr ""
+
+#: Helper/correoargentino-list-table.php:505
+msgid "Select bulk action"
+msgstr ""
+
+#: Helper/correoargentino-list-table.php:507
+msgid "Bulk actions"
+msgstr ""
+
+#: Helper/correoargentino-list-table.php:528
+msgid "Apply"
+msgstr ""
+
+#: Helper/correoargentino-list-table.php:589
+#: Helper/correoargentino-list-table.php:1518
+msgid "Show more details"
+msgstr ""
+
+#: Helper/correoargentino-list-table.php:672
+msgid "All dates"
+msgstr ""
+
+#: Helper/correoargentino-list-table.php:687
+#, php-format
+msgid "%1$s %2$d"
+msgstr ""
+
+#: Helper/correoargentino-list-table.php:766
+#: Helper/correoargentino-list-table.php:796
+#: Helper/correoargentino-list-table.php:819
+msgid "No comments"
+msgstr ""
+
+#: Helper/correoargentino-list-table.php:796
+msgid "No approved comments"
+msgstr ""
+
+#: Helper/correoargentino-list-table.php:819
+msgid "No pending comments"
+msgstr ""
+
+#: Helper/correoargentino-list-table.php:953
+msgid "First page"
+msgstr ""
+
+#: Helper/correoargentino-list-table.php:964
+msgid "Previous page"
+msgstr ""
+
+#: Helper/correoargentino-list-table.php:971
+#: Helper/correoargentino-list-table.php:975
+msgid "Current Page"
+msgstr ""
+
+#: Helper/correoargentino-list-table.php:994
+msgid "Next page"
+msgstr ""
+
+#: Helper/correoargentino-list-table.php:1005
+msgid "Last page"
+msgstr ""
+
+#: Helper/correoargentino-list-table.php:1240
+msgid "Select All"
+msgstr ""
+
+#: Hooks/correoargentino-hooks.php:667
+msgid ""
+"Correo Argentino. Al seleccionar envio a sucursal, debe seleccionar una "
+"provincia y una sucursal de destino"
+msgstr ""
+
+#: correoargentino-shipping.php:164
+#, php-format
+msgid "OOPS, %d kg increase the maximum weight of %d kg for %s"
+msgstr ""
+
+#: Settings/correoargentino-settings-form.php:25
+msgid "Acuerdo"
+msgstr ""
+
+#: Settings/correoargentino-settings-form.php:31
+msgid "Clave API"
+msgstr ""
+
+#: Settings/correoargentino-settings-form.php:33
+msgid ""
+" <a href=\"https://www.correoargentino.com.ar/\" target=\"_blank\" rel="
+"\"noopener noreferrer\">"
+msgstr ""
+
+#: Settings/correoargentino-settings-form.php:56
+#: Settings/correoargentino-settings-form.php:77
+msgid "Usuario"
+msgstr ""
+
+#: Settings/correoargentino-settings-form.php:62
+#: Settings/correoargentino-settings-form.php:83
+#: Settings/correoargentino-settings-form.php:176
+msgid "Contraseña"
+msgstr ""
+
+#: Settings/correoargentino-settings-form.php:84
+msgid " <a href=\""
+msgstr ""
+
+#: Settings/correoargentino-settings-form.php:102
+msgid "Servicio"
+msgstr ""
+
+#: Settings/correoargentino-settings-form.php:113
+msgid "¿Do you want to use the Correo Argentino Office quote tool?"
+msgstr ""
+
+#: Settings/correoargentino-settings-form.php:120
+msgid ""
+"Al integrar el cotizador el cálculo es realizado por la API de Correo "
+"Argentino"
+msgstr ""
+
+#: Settings/correoargentino-settings-form.php:141
+msgid "Tipo de Documento"
+msgstr ""
+
+#: Settings/correoargentino-settings-form.php:142
+msgid ""
+"Elegí CUIT si querés operar como Monotributista o Responsable Inscripto."
+msgstr ""
+
+#: Settings/correoargentino-settings-form.php:149
+msgid "Número de Documento"
+msgstr ""
+
+#: Settings/correoargentino-settings-form.php:150
+msgid "Si elegís CUIT solo agregá el mismo sin guiones"
+msgstr ""
+
+#: Settings/correoargentino-settings-form.php:156
+#: Settings/correoargentino-settings-form.php:255
+msgid "Nombre"
+msgstr ""
+
+#: Settings/correoargentino-settings-form.php:157
+#: Settings/correoargentino-settings-form.php:256
+msgid "Podés ingresar un nombre personal o comercial."
+msgstr ""
+
+#: Settings/correoargentino-settings-form.php:163
+msgid "Apellido"
+msgstr ""
+
+#: Settings/correoargentino-settings-form.php:164
+msgid "Este campo es requerido para consumidor final."
+msgstr ""
+
+#: Settings/correoargentino-settings-form.php:170
+#: Settings/correoargentino-settings-form.php:262 Settings/SettingsForm.php:42
+msgid "Email"
+msgstr ""
+
+#: Settings/correoargentino-settings-form.php:182
+#: Settings/correoargentino-settings-form.php:294
+msgid "Calle"
+msgstr ""
+
+#: Settings/correoargentino-settings-form.php:188
+#: Settings/correoargentino-settings-form.php:301
+msgid "Altura"
+msgstr ""
+
+#: Settings/correoargentino-settings-form.php:194
+#: Settings/correoargentino-settings-form.php:288
+msgid "Piso"
+msgstr ""
+
+#: Settings/correoargentino-settings-form.php:200
+#: Settings/correoargentino-settings-form.php:281
+msgid "Departamento"
+msgstr ""
+
+#: Settings/correoargentino-settings-form.php:206
+#: Settings/correoargentino-settings-form.php:275
+msgid "Ciudad"
+msgstr ""
+
+#: Settings/correoargentino-settings-form.php:212
+#: Settings/correoargentino-settings-form.php:268
+msgid "Provincia"
+msgstr ""
+
+#: Settings/correoargentino-settings-form.php:219
+#: Settings/correoargentino-settings-form.php:308
+msgid "Código Postal"
+msgstr ""
+
+#: Settings/correoargentino-settings-form.php:225
+#: Settings/correoargentino-settings-form.php:326
+msgid "Teléfono"
+msgstr ""
+
+#: Settings/correoargentino-settings-form.php:231
+#: Settings/correoargentino-settings-form.php:317
+msgid "Celular"
+msgstr ""
+
+#: Settings/correoargentino-settings-form.php:263
+msgid "Usá el siguiente formato: correoargentino@correo.com"
+msgstr ""
+
+#: Settings/correoargentino-settings-form.php:310
+msgid "Usá el siguiente formato: LNNNNLLL o NNNN. ej: 1190 o A1190NNC"
+msgstr ""
+
+#: Settings/correoargentino-settings-form.php:311
+msgid ""
+"Si no conocés tu CP consultá <a href=\"https://www.correoargentino.com.ar/"
+"formularios/cpa\">aquí</a>"
+msgstr ""
+
+#: Settings/correoargentino-settings-form.php:319
+#: Settings/correoargentino-settings-form.php:328
+msgid "Usá en el siguiente formato: 9999-99999999"
+msgstr ""
+
+#: Settings/correoargentino-settings-form.php:320
+#: Settings/correoargentino-settings-form.php:329
+msgid "Usá el siguiente formato: 9999-99999999"
+msgstr ""
+
+#: Settings/correoargentino-settings-form.php:341
+msgid "Descripción en tienda"
+msgstr ""
+
+#: Settings/correoargentino-settings-form.php:343
+msgid ""
+"Nombre visualizado por compradores en tienda al seleccionar el método "
+"requerido"
+msgstr ""
+
+#: Settings/correoargentino-settings-form.php:344
+#: Orders/correoargentino-metabox.php:16
+#: Classes/correoargentino-shipping-method.php:24
+msgid "Correo Argentino"
+msgstr ""
+
+#: Settings/correoargentino-settings-form.php:375
+#: Settings/correoargentino-settings-form.php:394
+msgid "Observación"
+msgstr ""
+
+#: Settings/correoargentino-settings-form.php:396
+msgid "La observación no puede superar los 150 caracteres"
+msgstr ""
+
+#: Settings/SettingsForm.php:18
+msgid "Enable"
+msgstr ""
+
+#: Settings/SettingsForm.php:25
+msgid "User"
+msgstr ""
+
+#: Settings/SettingsForm.php:30
+msgid "Password"
+msgstr ""
+
+#: Settings/SettingsForm.php:35
+msgid "Business name"
+msgstr ""
+
+#: Settings/SettingsForm.php:37
+msgid "You can use a personal or business name."
+msgstr ""
+
+#: Settings/SettingsForm.php:44
+msgid "Enter the following format: correoargentino@correo.com"
+msgstr ""
+
+#: Settings/SettingsForm.php:49
+msgid "State"
+msgstr ""
+
+#: Settings/SettingsForm.php:56
+msgid "City"
+msgstr ""
+
+#: Settings/SettingsForm.php:61
+msgid "Department"
+msgstr ""
+
+#: Settings/SettingsForm.php:67
+msgid "Floor"
+msgstr ""
+
+#: Settings/SettingsForm.php:73
+msgid "Street"
+msgstr ""
+
+#: Settings/SettingsForm.php:79
+msgid "Street number"
+msgstr ""
+
+#: Settings/SettingsForm.php:85
+msgid "Postal code"
+msgstr ""
+
+#: Settings/SettingsForm.php:88
+msgid ""
+"Please enter your postal code. You can find it in https://www."
+"correoargentino.com.ar/formularios/cpa"
+msgstr ""
+
+#: Settings/SettingsForm.php:93 Settings/SettingsForm.php:104
+msgid "Cellphone area code"
+msgstr ""
+
+#: Settings/SettingsForm.php:98 Settings/SettingsForm.php:109
+msgid "Cellphone"
+msgstr ""
+
+#: Settings/SettingsForm.php:115
+msgid "Observation"
+msgstr ""
+
+#: Classes/correoargentino-shipping-method.php:25
+msgid "Plugin oficial de Correo Argentino para Woocommerce"
+msgstr ""
+
+#: Classes/correoargentino-shipping-method.php:127
+msgid "Correo Argentino. Argentina tiene que ser el pais de Origen."
+msgstr ""
+
+#: Classes/correoargentino-shipping-method.php:153
+msgid "Ahora seleccioná con cuál servicio querés operar."
+msgstr ""
+
+#: Classes/correoargentino-shipping-method.php:193
+#: Classes/correoargentino-shipping-method.php:210
+msgid "Ahora agregá los datos de tu negocio."
+msgstr ""

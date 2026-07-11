@@ -1,0 +1,40 @@
+tr:has(.wc-hidden-field) {
+    display: none;
+}
+
+.non-interactive {
+  pointer-events: none;
+  background-color: #f0f0f0;
+  cursor: not-allowed;
+}
+
+/* Fork Julian Juan — envío a sucursal: ocultar la sección "otra dirección".
+   !important porque WooCommerce/algún tema pueden re-mostrarla con display inline
+   (lo gestiona js/checkout-branch-ux.js). */
+.shipping_address.corrarfo-branch-hidden {
+  display: none !important;
+}
+
+/* Fork Julian Juan — spinner "Cargando sucursales…". */
+.corrarfo-branch-spinner {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin: 0.5em 0;
+  font-size: 0.9em;
+  color: #555;
+}
+.corrarfo-spinner {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: corrarfo-spin 0.7s linear infinite;
+}
+@keyframes corrarfo-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

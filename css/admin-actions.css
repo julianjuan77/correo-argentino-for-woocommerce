@@ -1,0 +1,31 @@
+.ca-order-action-icon {
+    margin-right: 6px;
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+.ca-order-action-disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.wp-list-table th.column-ca_actions,
+.wp-list-table td.column-ca_actions {
+    width: 80px;
+    text-align: left;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.ca-show-hidden-wrapper {
+    float: right;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.bulk-actions-button + a.button.action.ca-restore-hidden-button {
+    margin-left: 30px;
+}
+

@@ -1,0 +1,16 @@
+# Dependencias / build (por si más adelante se usan)
+/node_modules/
+/vendor/
+/build/
+
+# Artefactos y temporales
+*.log
+*.zip
+.phpunit.result.cache
+.DS_Store
+Thumbs.db
+
+# Editores / IDE
+.idea/
+.vscode/
+*.swp
