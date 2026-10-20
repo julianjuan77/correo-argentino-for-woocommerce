@@ -35,7 +35,6 @@ require_once CORRARFO_PLUGIN_DIR . 'Service/correoargentino-service.interface.ph
 require_once CORRARFO_PLUGIN_DIR . 'Service/correoargentino-service-factory.php';
 require_once CORRARFO_PLUGIN_DIR . 'Service/correoargentino-paq-ar-service.php';
 require_once CORRARFO_PLUGIN_DIR . 'Service/correoargentino-mi-correo-service.php';
-require_once CORRARFO_PLUGIN_DIR . 'Orders/correoargentino-label.php';
 require_once CORRARFO_PLUGIN_DIR . 'Orders/correoargentino-branch.php';
 require_once CORRARFO_PLUGIN_DIR . 'correoargentino-hooks.php';
 require_once CORRARFO_PLUGIN_DIR . 'Hooks/correoargentino-order-hooks.php';
