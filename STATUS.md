@@ -66,6 +66,26 @@ Leyenda: ✅ hecho · 🔄 en curso · ⬜ pendiente · 🔒 bloqueado
 No se encontraron: falta de nonce/capability en acciones reales de escritura, SQL sin prepare,
 XSS explotable, `sslverify` deshabilitado, ni logging de tokens/API keys.
 
+### 3. Lint
+
+El plugin no tenía `composer.json`/`phpcs.xml` (fork de terceros, nunca se creó con
+`/wp-create-plugin`). Se armó el andamiaje y se corrió `make lint-plugin SITE=sandbox
+PLUGIN=correo-argentino-for-woocommerce`.
+
+| | Tarea | Estado |
+|---|---|---|
+| 3.1 | `composer.json` + `phpcs.xml` + `phpstan.neon.dist` | ✅ |
+| 3.2 | PHPCS con el ruleset `WordPress` completo: ~15.455 errores, casi todos de estilo (indentación con espacios en vez de tabs en todo el plugin). Se descartó corregirlo: diff enorme por una cuestión de formato, no de seguridad | ✅ (descartado a propósito) |
+| 3.3 | `phpcs.xml` acotado a sniffs de seguridad/corrección (`WordPress.Security.*`, `WordPress.DB.*`, `WordPress.PHP.*` peligrosas, `WordPress.WP.Alternative/Deprecated/DiscouragedFunctions`, naming, i18n, `PHPCompatibilityWP`) | ✅ |
+| 3.4 | Resultado del ruleset acotado: 2 errores (clases sin prefijo: `CorreoArgentinoAdminForm`, `CorreoArgentino_List_Table` — cosmético, bajo riesgo real de colisión) + 17 warnings, todos falsos positivos de contexto (`base64_*` para Basic Auth/PDF, `serialize()` sobre datos propios del servidor sin riesgo de Object Injection, `file_get_contents()` sobre JSON local del propio plugin, `json_encode()` en vez de `wp_json_encode()`) | ✅ (sin cambios de código necesarios) |
+| 3.5 | PHPStan: 141 errores, en su enorme mayoría ruido de que el plugin usa `class_alias()` en runtime para compatibilidad hacia atrás (PHPStan no puede resolver clases creadas dinámicamente) y de los stubs de WC siendo más estrictos que la realidad | ✅ (investigado) |
+| 3.6 | Sospecha puntual investigada: `$order->get_items()` sin argumento + llamadas a métodos de producto (`get_product()`, `get_total()`) — **no es un bug**: `get_items()` ya tiene default `'line_item'` en WooCommerce, así que nunca trae ítems de envío/fee/cupón. Falso positivo del stub (retorno genérico `WC_Order_Item[]`) | ✅ (descartado, confirmado contra el stub oficial) |
+
+**Para lint de código nuevo:** `make lint-plugin SITE=sandbox PLUGIN=correo-argentino-for-woocommerce`.
+Las ~15.000 violaciones de estilo del código heredado quedan fuera del ruleset a propósito; si en
+algún momento se quiere normalizar el formato completo, es tarea aparte (correr `phpcbf` con el
+ruleset `WordPress` completo y revisar el diff).
+
 ---
 
 ## Decisiones

@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<ruleset name="Correo Argentino for WooCommerce (Fork Julian Juan)">
+	<description>
+		PHPCS para el fork de Correo Argentino for WooCommerce: código de
+		terceros nunca escrito en el estándar de WordPress (indentación con
+		espacios en todo el plugin). En vez del ruleset WordPress-Core completo
+		-que son ~15.000 avisos de puro estilo (tabs, espaciado, alineación)-
+		se eligen a mano los sniffs de seguridad y corrección real: nonces,
+		sanitización/escape, SQL preparado, funciones peligrosas y
+		compatibilidad de PHP. El estilo se deja para otra tarea si hace falta.
+	</description>
+
+	<file>.</file>
+	<exclude-pattern>vendor/*</exclude-pattern>
+	<exclude-pattern>node_modules/*</exclude-pattern>
+	<exclude-pattern>i18n/*</exclude-pattern>
+
+	<arg name="basepath" value="."/>
+	<arg name="extensions" value="php"/>
+	<arg name="colors"/>
+	<arg value="sp"/>
+
+	<!-- Seguridad: escape de salida, sanitización de entrada, nonces, redirects. -->
+	<rule ref="WordPress.Security.EscapeOutput"/>
+	<rule ref="WordPress.Security.NonceVerification"/>
+	<rule ref="WordPress.Security.ValidatedSanitizedInput"/>
+	<rule ref="WordPress.Security.SafeRedirect"/>
+	<rule ref="WordPress.Security.PluginMenuSlug"/>
+
+	<!-- Base de datos: SQL preparado, nada de queries directas sin prepare. -->
+	<rule ref="WordPress.DB.PreparedSQL"/>
+	<rule ref="WordPress.DB.PreparedSQLPlaceholders"/>
+	<rule ref="WordPress.DB.DirectDatabaseQuery"/>
+	<rule ref="WordPress.DB.RestrictedClasses"/>
+	<rule ref="WordPress.DB.RestrictedFunctions"/>
+
+	<!-- Funciones de PHP peligrosas o que no deberían llegar a producción. -->
+	<rule ref="WordPress.PHP.DiscouragedPHPFunctions"/>
+	<rule ref="WordPress.PHP.DevelopmentFunctions"/>
+	<rule ref="WordPress.PHP.RestrictedPHPFunctions"/>
+	<rule ref="WordPress.PHP.NoSilencedErrors"/>
+	<rule ref="WordPress.PHP.DontExtract"/>
+
+	<!-- Buenas prácticas de WP que no son de estilo: funciones nativas antes
+	     que equivalentes "a mano" (ej. wp_remote_* en vez de curl directo),
+	     capabilities válidas, texto traducible con sprintf/placeholders. -->
+	<rule ref="WordPress.WP.AlternativeFunctions"/>
+	<rule ref="WordPress.WP.DiscouragedFunctions"/>
+	<rule ref="WordPress.WP.DeprecatedFunctions"/>
+	<rule ref="WordPress.WP.DeprecatedClasses"/>
+	<rule ref="WordPress.WP.GlobalVariablesOverride"/>
+
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+		<properties>
+			<property name="prefixes" type="array">
+				<element value="corrarfo_"/>
+				<element value="Corrarfo_"/>
+				<element value="CORRARFO_"/>
+				<element value="Corrarfo\"/>
+			</property>
+		</properties>
+	</rule>
+
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array">
+				<element value="correo-argentino-for-woocommerce"/>
+			</property>
+		</properties>
+	</rule>
+
+	<config name="minimum_wp_version" value="6.7"/>
+	<config name="testVersion" value="7.4-"/>
+	<rule ref="PHPCompatibilityWP"/>
+</ruleset>
