@@ -29,6 +29,27 @@ Esta es una versión corregida del plugin oficial: soluciona varios errores que 
 
 > El checkout por **bloques** (el nuevo editor de Gutenberg para la pantalla de pago) todavía no lo soporta ni el plugin oficial ni este fork. Si tu tienda lo usa, el plugin sigue funcionando pero sin las mejoras visuales de sucursal.
 
+### ¿Qué es el "checkout clásico" y cómo lo configuro?
+
+WooCommerce tiene dos formas de mostrar la pantalla de pago (la página donde el cliente carga sus datos y confirma la compra):
+
+- **Checkout clásico** (el que necesita este plugin): es el más antiguo y el más usado todavía hoy. La página de pago se arma con un código corto `[woocommerce_checkout]`.
+- **Checkout por bloques**: la versión nueva, hecha con el editor de bloques de WordPress (Gutenberg). Es más moderna, pero este plugin —y el oficial— todavía no sabe mostrar ahí sus mejoras de sucursal (igual no rompe nada: simplemente no se ven esas mejoras).
+
+**Cómo saber cuál tenés:**
+
+1. Andá a **Páginas** → buscá la página **"Pago"** o **"Checkout"** → Editar.
+2. Si ves un bloque celeste con el texto "Pago" / "Checkout" (como un componente del editor), estás usando el **de bloques**.
+3. Si ves un texto plano como `[woocommerce_checkout]`, ya estás usando el **clásico** — no hace falta que cambies nada.
+
+**Cómo pasar al clásico, si tenés el de bloques:**
+
+1. Entrá a **WooCommerce → Ajustes → Avanzado**.
+2. Buscá el apartado de páginas de la tienda ("Configuración de páginas") y confirmá que la página de **Pago** sea una página clásica con el código corto, no la de bloques. Si WooCommerce te ofrece una opción como *"Cambiar a la versión clásica del checkout"* o similar, usala.
+3. Si no aparece esa opción, podés editar la página de Pago manualmente: borrá el bloque de Checkout y escribí en su lugar el código corto `[woocommerce_checkout]` como texto.
+
+> Esto solo lo configurás una vez. Si ya tenías el plugin oficial funcionando antes de instalar este fork, seguramente ya estás en checkout clásico y no necesitás tocar nada.
+
 ## Descarga e instalación
 
 **No hace falta clonar el repositorio.** Bajá el plugin ya armado como un `.zip` listo para instalar:
