@@ -51,6 +51,14 @@ const CORRARFO_BUSINESS_DETAILS_FORM_URL = 'admin.php?page=wc-settings&tab=shipp
 
 /*
  * Credenciales de partner de la API Mi Correo.
+ *
+ * NO son credenciales de una tienda ni de un cliente: son la clave genérica que
+ * Correo Argentino le da al plugin oficial de WooCommerce para identificarse
+ * como aplicación ante /token (Basic Auth) y obtener un access_token. Recién con
+ * ese token el plugin valida la cuenta MiCorreo propia de cada tienda (usuario y
+ * contraseña reales, vía userValidate()). Cualquier instalación del plugin
+ * oficial trae estas mismas credenciales; por eso se mantienen en el código.
+ *
  * Fork Julian Juan: se pasan de `const` fijas a `define()` con guardia
  * `defined()`, para poder sobreescribirlas desde wp-config.php cuando las de
  * fábrica del plugin queden inválidas (401). Ej. en wp-config.php:
