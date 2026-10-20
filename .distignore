@@ -5,6 +5,7 @@
 .github
 STATUS.md
 README.md
+docs
 composer.json
 composer.lock
 phpcs.xml

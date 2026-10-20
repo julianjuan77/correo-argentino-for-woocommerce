@@ -39,6 +39,12 @@ Esta es una versión corregida del plugin oficial: soluciona varios errores que 
 4. Andá a **WooCommerce → Ajustes → Envío → Correo Argentino** y cargá tus credenciales de Mi Correo o de PAQ.AR.
 5. *(Opcional, recomendado)* En **WooCommerce → Ajustes → Envío**, configurá el destino por defecto como "dirección de facturación" para la mejor experiencia en envíos a domicilio.
 
+### 📖 Manual de usuario oficial
+
+Para la configuración paso a paso del plugin (PAQ.AR, MiCorreo, zonas de envío, envío gratis, recargos/descuentos, el panel de MiCorreo y cómo dar de alta una sucursal cabecera), Correo Argentino publica un manual de usuario completo:
+
+**[📄 Manual de usuario — Integración Plugin de Correo Argentino para WooCommerce](docs/manual-usuario-micorreo-woocommerce-v3.0.8.pdf)**
+
 ## ¿Problemas para iniciar sesión con Mi Correo?
 
 Si al conectar la cuenta aparece el mensaje *"Ha ocurrido un error al conectarse a MiCorreo"*, revisá primero:
