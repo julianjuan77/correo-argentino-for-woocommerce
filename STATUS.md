@@ -86,6 +86,14 @@ Las ~15.000 violaciones de estilo del código heredado quedan fuera del ruleset 
 algún momento se quiere normalizar el formato completo, es tarea aparte (correr `phpcbf` con el
 ruleset `WordPress` completo y revisar el diff).
 
+### 4. Documentación
+
+| | Tarea | Estado |
+|---|---|---|
+| 4.1 | `README.md` reescrito: sección para usuarios de tienda primero (qué trae, requisitos, instalación, troubleshooting de login, FAQ), sección técnica al final (arquitectura, credenciales, hooks, lint, changelog detallado) | ✅ |
+
+Sitios de prueba usados en esta sesión (`sandbox`, `octubre-minorista`) dados de baja al cierre.
+
 ---
 
 ## Decisiones
