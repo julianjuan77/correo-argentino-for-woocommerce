@@ -4,7 +4,7 @@ Tags: woocommerce, shipping, logistics, argentina, correo argentino
 Requires at least: 6.7
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 3.0.7
+Stable tag: 3.0.7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -51,6 +51,16 @@ Podés ofrecer a tus clientes diferentes modalidades de envío según sus necesi
 
 
 == Changelog ==
+
+= 3.0.7.2 (fork no oficial, Julian Juan) =
+* Corrige un fatal 500 en el checkout cuando la API devuelve un token vencido (401).
+* Credenciales de la API configurables desde wp-config.php.
+* Corrige el envío a domicilio para que no fuerce "otra dirección" de forma incorrecta.
+* Mejoras de UX al elegir sucursal: autocompletado de destinatario y spinner de carga.
+* Compatibilidad con HPOS (almacenamiento de pedidos de alto rendimiento).
+* Se elimina un endpoint REST público sin autenticación (código muerto, nunca activo).
+* uninstall.php limpia también los metadatos de pedidos en HPOS.
+* Ver el changelog completo y detallado en https://github.com/julianjuan77/correo-argentino-for-woocommerce/blob/main/CHANGELOG.md
 
 = 3.0.7 =
 * Mejoras de seguridad y saneamiento de datos (sanitization).

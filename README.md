@@ -52,7 +52,7 @@ Si al conectar la cuenta aparece el mensaje *"Ha ocurrido un error al conectarse
 
 ## Licencia
 
-GPLv2 o posterior. Ver [`LICENSE`](LICENSE). El código original es de Correo Argentino; este fork mantiene la misma licencia y su atribución.
+GPLv2 o posterior. Ver [`license.txt`](license.txt). El código original es de Correo Argentino; este fork mantiene la misma licencia y su atribución.
 
 ---
 
