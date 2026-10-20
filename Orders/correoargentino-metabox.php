@@ -112,8 +112,10 @@ class Metabox
 
 
         if ($statusStartsInCompleted && !$statusStartsInCancel && !empty($tracking) && $orderServiceType == CORRARFO_PAQ_AR) {
-            $buttons .= "<a class='button button-primary button-block' href='" . $actionUrl . "label' >" . esc_html__("Ver Rótulo", 'correo-argentino-for-woocommerce') . "</a>&nbsp;";
-            $buttons .= "<a class='button' href='" . $actionUrl . "cancel' >" . esc_html__("Cancel", 'correo-argentino-for-woocommerce') . "</a>";
+            $labelUrl = wp_nonce_url($actionUrl . 'label', 'corrarfo_orders_action');
+            $cancelUrl = wp_nonce_url($actionUrl . 'cancel', 'corrarfo_cancel_' . $order_id);
+            $buttons .= "<a class='button button-primary button-block' href='" . esc_url($labelUrl) . "' >" . esc_html__("Ver Rótulo", 'correo-argentino-for-woocommerce') . "</a>&nbsp;";
+            $buttons .= "<a class='button' href='" . esc_url($cancelUrl) . "' >" . esc_html__("Cancel", 'correo-argentino-for-woocommerce') . "</a>";
         }
         $buttons .= "</p>";
         echo wp_kses_post($buttons);

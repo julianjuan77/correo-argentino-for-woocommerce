@@ -57,7 +57,7 @@ Leyenda: ✅ hecho · 🔄 en curso · ⬜ pendiente · 🔒 bloqueado
 | | Tarea | Severidad | Estado |
 |---|---|---|---|
 | 2.1 | Eliminar el endpoint REST público `/labels` (código muerto) — `Orders/correoargentino-label.php` | Alto | ✅ |
-| 2.2 | Agregar `_wpnonce` a los links "Ver Rótulo"/"Cancel" del metabox — `Orders/correoargentino-metabox.php` | Medio | ⬜ |
+| 2.2 | Agregar `_wpnonce` a los links "Ver Rótulo"/"Cancel" del metabox — `Orders/correoargentino-metabox.php` | Medio | ✅ |
 | 2.3 | Extender `uninstall.php` para borrar también postmeta de HPOS (`wc_orders_meta`), reusando la detección ya existente en `Helper/correoargentino-order-actions-handler.php` | Medio | ⬜ |
 | 2.4 | Revisar/documentar las credenciales default del partner hardcodeadas en `Lib/Constants.php` | Medio | ⬜ |
 | 2.5 | Borrar clase muerta `Service`/`Corrarfo_Service` y carpeta `Mock/` | Bajo | ⬜ |
