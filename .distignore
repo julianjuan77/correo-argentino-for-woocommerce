@@ -1,0 +1,19 @@
+# Lo que no va al zip (scripts/package-plugin.sh). vendor/ se arma aparte, de producción.
+.git
+.gitignore
+.distignore
+.github
+STATUS.md
+README.md
+composer.json
+composer.lock
+phpcs.xml
+phpstan.neon.dist
+.phpcs-cache
+.phpunit.result.cache
+*.log
+.DS_Store
+.editorconfig
+.idea
+.vscode
+*.swp
