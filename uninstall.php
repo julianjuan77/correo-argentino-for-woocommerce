@@ -65,7 +65,7 @@ $wpdb->query(
 	)
 );
 
-// Delete order metadata from the plugin.
+// Delete order metadata from the plugin (legacy post storage).
 // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
 $wpdb->query(
 	$wpdb->prepare(
@@ -73,6 +73,23 @@ $wpdb->query(
 		$wpdb->esc_like('_correoargentino_') . '%'
 	)
 );
+
+// Delete order metadata from the plugin (HPOS storage, when enabled).
+// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
+$corrarfo_hpos_table_exists = (bool) $wpdb->get_var(
+	$wpdb->prepare('SHOW TABLES LIKE %s', $wpdb->esc_like($wpdb->prefix . 'wc_orders_meta'))
+);
+
+if ($corrarfo_hpos_table_exists) {
+	// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
+	$wpdb->query(
+		$wpdb->prepare(
+			'DELETE FROM %i WHERE meta_key LIKE %s',
+			$wpdb->prefix . 'wc_orders_meta',
+			$wpdb->esc_like('_correoargentino_') . '%'
+		)
+	);
+}
 
 // 3) Plugin transients/caches.
 delete_transient('corrarfo_cached_services');
