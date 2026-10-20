@@ -64,7 +64,11 @@ salga una versión oficial que los resuelva.
 
 ## Credenciales de la API (Mi Correo)
 
-Las credenciales *partner* de fábrica del plugin oficial (`WOOCOMMERCE:...`)
+Las credenciales *partner* de fábrica (`WOOCOMMERCE:...`, en `Lib/Constants.php`)
+no son de tu tienda ni de ningún cliente: son la clave genérica que Correo
+Argentino le da a cualquier instalación del plugin oficial para autenticarse
+como aplicación y obtener un token; después cada tienda valida su propia cuenta
+de MiCorreo por separado. Cuando Correo Argentino las rota quedan inválidas y
 devuelven **401**. Cargá las tuyas en `wp-config.php`, antes de
 `/* That's all, stop editing! */`:
 
