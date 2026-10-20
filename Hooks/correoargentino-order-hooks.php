@@ -5,7 +5,6 @@ if (!defined('ABSPATH')) {
 
 use Corrarfo\Lib\Utils;
 use Corrarfo\Orders\Metabox;
-use Corrarfo\Orders\Label;
 use Corrarfo\Orders\Branch;
 use Corrarfo\Service\ServiceFactory;
 
@@ -42,7 +41,6 @@ function corrarfo_shipping_method_init()
 }
 
 add_action('add_meta_boxes', [Metabox::class, 'create']);
-add_action('rest_api_init', [Label::class, 'create']);
 add_action('woocommerce_after_shipping_rate', [Branch::class, 'showBranches']);
 add_action('woocommerce_review_order_before_payment', function () {
     echo "

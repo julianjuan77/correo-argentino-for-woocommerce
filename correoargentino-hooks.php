@@ -4,7 +4,6 @@ if (!defined('ABSPATH')) {
 }
 
 use Corrarfo\Orders\Metabox;
-use Corrarfo\Orders\Label;
 use Corrarfo\Orders\Order;
 use Corrarfo\Orders\Branch;
 
@@ -12,7 +11,6 @@ use Corrarfo\Orders\Branch;
 add_action('woocommerce_review_order_before_cart_contents', 'corrarfo_validate_order', 10);
 add_action('woocommerce_after_checkout_validation', 'corrarfo_validate_order', 10);
 add_action('add_meta_boxes', [Metabox::class, 'create']);
-add_action('rest_api_init', [Label::class, 'create']);
 add_action('admin_menu', [Order::class, 'build_admin_menu']);
 add_action('woocommerce_after_shipping_rate', [Branch::class, 'showBranches']);
 add_action("wp_enqueue_scripts", "corrarfo_add_select2_scripts");
