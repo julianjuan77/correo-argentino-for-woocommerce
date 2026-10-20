@@ -94,6 +94,14 @@ ruleset `WordPress` completo y revisar el diff).
 
 Sitios de prueba usados en esta sesión (`sandbox`, `octubre-minorista`) dados de baja al cierre.
 
+### 5. Distribución
+
+| | Tarea | Estado |
+|---|---|---|
+| 5.1 | `readme.txt` alineado a 3.0.7.2 (quedaba en 3.0.7) + changelog resumido, `license.txt` agregado (faltaba, el README ya lo linkeaba), `.distignore` para `make package-plugin` | ✅ |
+| 5.2 | Release [`v3.0.7.2`](https://github.com/julianjuan77/correo-argentino-for-woocommerce/releases/tag/v3.0.7.2) en GitHub con el zip adjunto — se usa GitHub Release en vez de commitear el binario al árbol del repo (mismo patrón que los demás plugins del entorno) | ✅ |
+| 5.3 | README: sección "Descarga e instalación" con link directo a la última release, sin necesidad de clonar el repo | ✅ |
+
 ---
 
 ## Decisiones

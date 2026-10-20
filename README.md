@@ -7,6 +7,8 @@ Integrá tu tienda WooCommerce con Correo Argentino para gestionar tus envíos *
 
 Esta es una versión corregida del plugin oficial: soluciona varios errores que rompían el carrito o el checkout en ciertos casos, y mejora la experiencia al elegir una sucursal de entrega.
 
+**⬇️ [Descargar la última versión](https://github.com/julianjuan77/correo-argentino-for-woocommerce/releases/latest)** — no hace falta clonar el repositorio, ver [Descarga e instalación](#descarga-e-instalación).
+
 ---
 
 ## ¿Qué trae esta versión que no tiene la oficial?
@@ -27,12 +29,15 @@ Esta es una versión corregida del plugin oficial: soluciona varios errores que 
 
 > El checkout por **bloques** (el nuevo editor de Gutenberg para la pantalla de pago) todavía no lo soporta ni el plugin oficial ni este fork. Si tu tienda lo usa, el plugin sigue funcionando pero sin las mejoras visuales de sucursal.
 
-## Instalación
+## Descarga e instalación
 
-1. Descargá o cloná este repositorio dentro de `wp-content/plugins/` de tu sitio.
-2. Desde WordPress, andá a **Plugins** y activá **"Correo Argentino for WooCommerce (Fork Julian Juan)"**.
-3. Andá a **WooCommerce → Ajustes → Envío → Correo Argentino** y cargá tus credenciales de Mi Correo o de PAQ.AR.
-4. *(Opcional, recomendado)* En **WooCommerce → Ajustes → Envío**, configurá el destino por defecto como "dirección de facturación" para la mejor experiencia en envíos a domicilio.
+**No hace falta clonar el repositorio.** Bajá el plugin ya armado como un `.zip` listo para instalar:
+
+1. Andá a la página de [**Releases**](https://github.com/julianjuan77/correo-argentino-for-woocommerce/releases/latest) y descargá el archivo `correo-argentino-for-woocommerce-X.Y.Z.zip` de la última versión.
+2. En tu sitio, andá a **Plugins → Añadir nuevo → Subir plugin** y seleccioná el `.zip` descargado.
+3. Activalo desde el listado de **Plugins**.
+4. Andá a **WooCommerce → Ajustes → Envío → Correo Argentino** y cargá tus credenciales de Mi Correo o de PAQ.AR.
+5. *(Opcional, recomendado)* En **WooCommerce → Ajustes → Envío**, configurá el destino por defecto como "dirección de facturación" para la mejor experiencia en envíos a domicilio.
 
 ## ¿Problemas para iniciar sesión con Mi Correo?
 
