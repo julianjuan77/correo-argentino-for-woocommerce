@@ -14,6 +14,10 @@
 	<exclude-pattern>vendor/*</exclude-pattern>
 	<exclude-pattern>node_modules/*</exclude-pattern>
 	<exclude-pattern>i18n/*</exclude-pattern>
+	<!-- bin/: scripts PHP planos de build/mantenimiento, no corren en WordPress
+	     (no hay wp-load.php, no hay salida HTML que escapar, no son "globals" de
+	     un plugin cargado por WP) — ver docs/DECISIONS.md ADR-001. -->
+	<exclude-pattern>bin/*</exclude-pattern>
 
 	<arg name="basepath" value="."/>
 	<arg name="extensions" value="php"/>

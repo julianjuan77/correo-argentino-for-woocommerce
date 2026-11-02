@@ -23,6 +23,13 @@ token ante 401 (con fix de zona horaria) y mejoras de UX en envío a sucursal.
 
 ## 🔄 En progreso
 
+**2026-11-02 — Validación/selección de CP por localidad y provincia (ADR-001 aprobado).**
+Done criteria: `bin/generate-postal-codes.php` genera `Mock/postal-codes.json` + checkout con
+select Provincia→Localidad (CP derivado) + validación bloqueante antes de `registerOrder()` +
+WP-Cron mensual de refresh (`corrarfo_refresh_postal_codes`, guarda en `option`, fallback al
+dataset bundleado) + `docs/ARCHITECTURE.md` actualizado (contrato de la nueva `option` y del
+cron) + lint y tests en verde + commit.
+
 **Objetivo de esta etapa:** llevar el fork a una versión segura y estable aplicando las buenas
 prácticas básicas de WordPress (nonces, capability checks, sanitización/escape, prepared
 statements, manejo de credenciales, llamadas HTTP). **Sin sobreingeniería**: se ataca lo concreto
@@ -106,8 +113,16 @@ Sitios de prueba usados en esta sesión (`sandbox`, `octubre-minorista`) dados d
 
 ## Decisiones
 
-_Sin ADRs todavía. Se documentan acá a medida que se tomen decisiones de diseño (p. ej. dónde
-guardar credenciales, cómo versionar los fixes respecto del oficial)._
+**ADR-001 (Aprobada, 2026-11-02):** validación y selección de código postal por
+localidad/provincia. Un cliente tuvo una etiqueta rechazada por Correo Argentino porque el CP
+cargado en el checkout no correspondía a la provincia elegida — hoy no hay ningún cruce entre
+provincia/localidad/CP. Se aprobó generar un dataset local (`Mock/postal-codes.json`) a partir
+del endpoint propio (no documentado) del formulario de "Consulta de CP" de Correo Argentino,
+bundleado en cada release + refrescado en segundo plano una vez por mes vía WP-Cron (guardado
+en una `option`, nunca pisa el archivo del plugin; cae al dataset bundleado si el refresh
+falla). El checkout reemplaza el campo "Ciudad" por un select de Localidad dependiente de
+Provincia, y el mismo dataset valida antes de registrar el envío en Correo Argentino. Detalle
+completo y alternativas descartadas en `docs/DECISIONS.md`.
 
 ---
 
