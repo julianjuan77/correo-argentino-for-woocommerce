@@ -216,6 +216,14 @@ class PaqArService implements ServicePaqArInterface
         $items = $order->get_items();
         $shippingMethod = $order->get_shipping_method();
         $isBranch = stripos($shippingMethod, CORRARFO_BRANCH);
+
+        if (!$isBranch) {
+            $postalError = Utils::validatePostalCodeForLabel($shipping);
+            if ($postalError) {
+                return $postalError;
+            }
+        }
+
         $dataStore = array_merge(Utils::getSettings(), $corrarfo_data);
         $products = array_values(
             array_map(function (WC_Order_Item_Product $item) {

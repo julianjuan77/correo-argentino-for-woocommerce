@@ -40,6 +40,7 @@ $corrarfo_options = array(
 	CORRARFO_OPTION_SHIPPING_MIN_TOTAL,
 	CORRARFO_OPTION_SHIPPING_PERCENTAGE,
 	CORRARFO_OPTION_SHIPPING_TYPE,
+	CORRARFO_POSTAL_CODES_CACHE_OPTION,
 );
 
 foreach ($corrarfo_options as $corrarfo_option) {
@@ -94,4 +95,7 @@ if ($corrarfo_hpos_table_exists) {
 // 3) Plugin transients/caches.
 delete_transient('corrarfo_cached_services');
 delete_transient('corrarfo_last_branch_fetch');
+
+// 4) WP-Cron del refresh de localidades/CP (ADR-001).
+wp_clear_scheduled_hook(CORRARFO_POSTAL_CODES_REFRESH_HOOK);
 

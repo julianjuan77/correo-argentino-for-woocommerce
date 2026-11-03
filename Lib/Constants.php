@@ -42,6 +42,13 @@ const CORRARFO_CUSTOMER_SHIPPING_ADDRESS_2 = '_correoargentino_customer_shipping
 const CORRARFO_TRACKING_NUMBER = '_correoargentino_tracking_number';
 const CORRARFO_ORDER_API_ERROR = '_correoargentino_order_api_error';
 
+// Dataset de localidades/CP (ADR-001). La `option` de refresh mensual por WP-Cron; nunca
+// se guarda autoload porque sólo se lee en checkout y al registrar un envío, no en cada
+// request.
+const CORRARFO_POSTAL_CODES_CACHE_OPTION = 'corrarfo_postal_codes_cache';
+const CORRARFO_POSTAL_CODES_REFRESH_HOOK = 'corrarfo_refresh_postal_codes';
+const CORRARFO_POSTAL_CODES_NONCE_ACTION = 'corrarfo_postal_codes';
+
 const CORRARFO_TRACKING_URL = 'https://www.correoargentino.com.ar/formularios/e-commerce?id=';
 const CORRARFO_PAQ_AR_API_URL = 'https://api.correoargentino.com.ar/paqar/v1';
 const CORRARFO_PAQ_AR_API_SANDBOX_URL = 'https://apitest.correoargentino.com.ar/paqar/v1';

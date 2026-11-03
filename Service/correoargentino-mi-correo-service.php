@@ -233,6 +233,14 @@ class MiCorreoService implements ServiceMiCorreoInterface
         $fullAddress = trim("{$streetName} {$altura}");
 
         $isBranch = stripos($shippingMethodName, CORRARFO_BRANCH);
+
+        if (!$isBranch) {
+            $postalError = Utils::validatePostalCodeForLabel($shippingData);
+            if ($postalError) {
+                return $postalError;
+            }
+        }
+
         $settings = array_merge(Utils::getSettings(), $corrarfo_data);
 
         $recipient = [

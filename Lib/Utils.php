@@ -427,6 +427,38 @@ class Utils
         return \Automattic\WooCommerce\Utilities\OrderUtil::custom_orders_table_usage_is_enabled();
     }
 
+    /**
+     * Valida que la provincia/localidad/CP del envío (a domicilio, no a sucursal) sean
+     * consistentes entre sí contra el dataset local de ADR-001, antes de registrar el
+     * envío en Correo Argentino -que si no, lo rechaza recién en ese paso-.
+     *
+     * @return array|null El mismo shape de error que devuelven los Service::registerOrder()
+     *                     (`error` + `error_body`), o null si está todo bien.
+     */
+    public static function validatePostalCodeForLabel(array $shipping): ?array
+    {
+        $province = $shipping['state'] ?? '';
+        $city = $shipping['city'] ?? '';
+        $postcode = self::normalizeZipCode($shipping['postcode'] ?? '');
+
+        if (\Corrarfo\Lib\PostalCodes::isValid($province, $city, $postcode)) {
+            return null;
+        }
+
+        $message = sprintf(
+            /* translators: 1: postal code, 2: city, 3: province code */
+            __('El código postal %1$s no corresponde a %2$s (provincia %3$s) según Correo Argentino. Revisá la dirección de envío antes de generar la etiqueta.', 'correo-argentino-for-woocommerce'),
+            $postcode,
+            $city,
+            $province
+        );
+
+        return [
+            'error' => true,
+            'error_body' => wp_json_encode(['message' => $message]),
+        ];
+    }
+
     public static function getServiceDataFromShippingMethod($shippingMethod)
     {
         if (!$shippingMethod) {

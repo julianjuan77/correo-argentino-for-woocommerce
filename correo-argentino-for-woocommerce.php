@@ -176,6 +176,8 @@ register_deactivation_hook(__FILE__, function () {
     delete_option(CORRARFO_USE_RATES);
     delete_option(CORRARFO_IS_CONNECTED);
     delete_option(CORRARFO_BUSINESS_DETAILS_FILLED);
+
+    wp_clear_scheduled_hook(CORRARFO_POSTAL_CODES_REFRESH_HOOK);
 });
 
 

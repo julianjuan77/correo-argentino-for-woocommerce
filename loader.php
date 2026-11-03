@@ -43,6 +43,7 @@ require_once CORRARFO_PLUGIN_DIR . 'Hooks/correoargentino-order-autosend-hook.ph
 require_once CORRARFO_PLUGIN_DIR . 'Settings/correoargentino-order-prefix-settings.php';
 require_once CORRARFO_PLUGIN_DIR . 'Helper/correoargentino-order-prefix-helper.php';
 require_once CORRARFO_PLUGIN_DIR . 'Hooks/correoargentino-postcode-validation.php';
+require_once CORRARFO_PLUGIN_DIR . 'Hooks/correoargentino-postal-codes.php';
 // Fork Julian Juan: destino de envío → fallback a facturación (envío a domicilio).
 require_once CORRARFO_PLUGIN_DIR . 'Hooks/correoargentino-shipping-destination-fallback.php';
 

@@ -23,13 +23,6 @@ token ante 401 (con fix de zona horaria) y mejoras de UX en envío a sucursal.
 
 ## 🔄 En progreso
 
-**2026-11-02 — Validación/selección de CP por localidad y provincia (ADR-001 aprobado).**
-Done criteria: `bin/generate-postal-codes.php` genera `Mock/postal-codes.json` + checkout con
-select Provincia→Localidad (CP derivado) + validación bloqueante antes de `registerOrder()` +
-WP-Cron mensual de refresh (`corrarfo_refresh_postal_codes`, guarda en `option`, fallback al
-dataset bundleado) + `docs/ARCHITECTURE.md` actualizado (contrato de la nueva `option` y del
-cron) + lint y tests en verde + commit.
-
 **Objetivo de esta etapa:** llevar el fork a una versión segura y estable aplicando las buenas
 prácticas básicas de WordPress (nonces, capability checks, sanitización/escape, prepared
 statements, manejo de credenciales, llamadas HTTP). **Sin sobreingeniería**: se ataca lo concreto
@@ -111,6 +104,26 @@ Sitios de prueba usados en esta sesión (`sandbox`, `octubre-minorista`) dados d
 
 ---
 
+### 6. Validación/selección de CP por localidad y provincia (ADR-001)
+
+Un cliente tuvo una etiqueta rechazada por Correo Argentino porque el CP cargado en el checkout
+no correspondía a la provincia elegida. Detalle y alternativas descartadas en `docs/DECISIONS.md`.
+
+| | Tarea | Estado |
+|---|---|---|
+| 6.1 | `bin/generate-postal-codes.php` + `bin/caba-barrios-cp.php` (CABA no trae CP por localidad en el endpoint; tabla curada del PDF oficial de Correo Argentino) → `Mock/postal-codes.json` (24 provincias, 24.155 entradas) | ✅ |
+| 6.2 | `Lib/PostalCodes.php` (lectura del dataset) + `Lib/PostalCodesRefresher.php` + WP-Cron mensual `corrarfo_refresh_postal_codes` → `option` `corrarfo_postal_codes_cache`, con fallback al dataset bundleado si falla | ✅ |
+| 6.3 | Validación bloqueante provincia↔localidad↔CP antes de `registerOrder()` en ambos servicios (PAQ.AR y MiCorreo), sólo para envío a domicilio (no a sucursal) | ✅ |
+| 6.4 | Select Localidad (dependiente de Provincia, CP derivado) en el checkout **clásico** (`js/postal-code-select.js` + AJAX `corrarfo_get_localidades`) — probado en browser contra `sandbox`: Pergamino → CP 2700 autocompletado; CABA/Recoleta → select de 57 CPs | ✅ |
+| 6.5 | **Checkout de bloques** (`wp:woocommerce/checkout`, React): se probó en vivo y el swap de DOM por jQuery queda visualmente puesto pero no se sincroniza con el store interno (`wc/store/cart`) — el pedido se mandaría con Ciudad/CP vacíos. Se decidió degradar: `corrarfo_checkout_uses_block_checkout()` detecta el bloque y en ese caso NO se enqueuea el script, el campo queda como texto libre (sin romper nada). La validación antes de generar la etiqueta (6.3) sigue aplicando igual en ambos casos | ✅ (degradado a propósito) |
+| 6.6 | Integración nativa con el checkout de bloques (vía `wc/store/checkout`/`setBillingAddress`, o la API de "additional fields" de WooCommerce Blocks) | ⬜ pendiente, no pedida todavía |
+
+**Pendiente de uso real:** uninstall.php y `deactivation_hook` ya limpian la `option` y el cron;
+falta validar el refresh de WP-Cron corriendo en un sitio real (el `wp_next_scheduled` se
+confirmó en `sandbox`, pero el callback no se disparó todavía porque el intervalo es mensual).
+
+---
+
 ## Decisiones
 
 **ADR-001 (Aprobada, 2026-11-02):** validación y selección de código postal por
@@ -120,8 +133,10 @@ provincia/localidad/CP. Se aprobó generar un dataset local (`Mock/postal-codes.
 del endpoint propio (no documentado) del formulario de "Consulta de CP" de Correo Argentino,
 bundleado en cada release + refrescado en segundo plano una vez por mes vía WP-Cron (guardado
 en una `option`, nunca pisa el archivo del plugin; cae al dataset bundleado si el refresh
-falla). El checkout reemplaza el campo "Ciudad" por un select de Localidad dependiente de
-Provincia, y el mismo dataset valida antes de registrar el envío en Correo Argentino. Detalle
+falla). El checkout clásico reemplaza el campo "Ciudad" por un select de Localidad dependiente
+de Provincia, y el mismo dataset valida antes de registrar el envío en Correo Argentino. El
+checkout de bloques de WooCommerce se degrada a texto libre (ver tarea 6.5) porque el swap de
+DOM no se sincroniza con su store interno — queda como trabajo pendiente si hace falta. Detalle
 completo y alternativas descartadas en `docs/DECISIONS.md`.
 
 ---
