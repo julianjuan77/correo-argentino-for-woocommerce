@@ -8,30 +8,18 @@ jQuery(document).ready(function($) {
         return !street || !number || !city || !postalCode;
     }
 
+    // El forzado de "otra dirección" según el método de envío (domicilio/sucursal)
+    // vive en checkout-branch-ux.js, que es quien decide esa visibilidad hoy.
+    // Acá sólo queda la guarda de dirección incompleta.
     function checkShippingMethod() {
         const $checkbox = $('#ship-to-different-address-checkbox');
 
         if (isAddressIncomplete()) {
             if ($checkbox.prop('checked')) {
-                $checkbox.prop('checked', false).change();            }
-            $('.shipping_address').show();
-            return;
-        }
-
-        $('input[name^="shipping_method"]:checked').each(function() {
-            const $shippingRow = $(this).closest('li');
-            const label = $shippingRow.length ? $shippingRow.text().toLowerCase() : '';
-
-            if (
-                label.includes('correo argentino clásico a domicilio') ||
-                label.includes('correo argentino expreso a domicilio')
-            ) {
-                if ($checkbox.prop('checked')) {
-                    $checkbox.prop('checked', false).change();
-                }
-                $('.shipping_address').hide();
+                $checkbox.prop('checked', false).change();
             }
-        });
+            $('.shipping_address').show();
+        }
     }
     // Execute when the shipping method changes
     $('form.checkout').on('change', 'input[name^="shipping_method"]', function() {

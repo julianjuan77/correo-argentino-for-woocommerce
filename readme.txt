@@ -4,7 +4,7 @@ Tags: woocommerce, shipping, logistics, argentina, correo argentino
 Requires at least: 6.7
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 3.0.7.3
+Stable tag: 3.0.7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -51,6 +51,13 @@ Podés ofrecer a tus clientes diferentes modalidades de envío según sus necesi
 
 
 == Changelog ==
+
+= 3.0.7.4 (fork no oficial, Julian Juan) =
+* Corrige que se destildara solo "Enviar a una dirección diferente" al elegir envío a
+  domicilio: un script viejo (`checkout-interactions.js`) pisaba al que maneja esto
+  correctamente. Ahora en domicilio el checkbox funciona normal; en sucursal se sigue
+  ocultando como corresponde.
+* Se elimina `checkout-shipping-toggle.js` (código muerto, ya reemplazado).
 
 = 3.0.7.3 (fork no oficial, Julian Juan) =
 * Nuevo: select de Localidad dependiente de Provincia en el checkout (con el código postal

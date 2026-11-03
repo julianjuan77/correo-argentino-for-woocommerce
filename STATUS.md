@@ -1,6 +1,6 @@
 # Correo Argentino for WooCommerce (Fork Julian Juan) — Estado del proyecto
 
-> Plugin: `correo-argentino-for-woocommerce` 3.0.7.3 | WP 6.7+ | PHP 7.4+ | WooCommerce 8.9+
+> Plugin: `correo-argentino-for-woocommerce` 3.0.7.4 | WP 6.7+ | PHP 7.4+ | WooCommerce 8.9+
 > Repo: [correo-argentino-for-woocommerce](https://github.com/julianjuan77/correo-argentino-for-woocommerce)
 > Creado: 2026 (fork del oficial 3.0.7) · Última sesión: 2026-10-20 — Primera sesión de trabajo sobre el fork: arranca el endurecimiento de seguridad y estabilidad.
 
@@ -122,6 +122,16 @@ no correspondía a la provincia elegida. Detalle y alternativas descartadas en `
 **Pendiente de uso real:** uninstall.php y `deactivation_hook` ya limpian la `option` y el cron;
 falta validar el refresh de WP-Cron corriendo en un sitio real (el `wp_next_scheduled` se
 confirmó en `sandbox`, pero el callback no se disparó todavía porque el intervalo es mensual).
+
+---
+
+### 7. Bugfixes encontrados al instalar 3.0.7.3 en producción (8deoctubre.com.ar)
+
+| | Tarea | Estado |
+|---|---|---|
+| 7.1 | El select de localidad/CP (tarea 6.4) no aparecía: las llamadas AJAX a `admin-ajax.php` devolvían 401. Causa externa al plugin (regla de seguridad/firewall del sitio bloqueando `/wp-admin/` para visitantes no logueados, incluido `admin-ajax.php`) — no es un bug de código, pendiente de que el cliente agregue la excepción | 🔒 bloqueado (externo al plugin) |
+| 7.2 | Al tildar "enviar a una dirección diferente" con envío **a domicilio**, se destildaba solo. Causa: `js/checkout-interactions.js` (legacy) forzaba destildar+ocultar para métodos "a domicilio", pisando a `js/checkout-branch-ux.js` (el que sí debía manejar esto: ocultar sólo en sucursal, seguir el checkbox en domicilio). Se quitó esa lógica de `checkout-interactions.js`, dejando sólo su guarda de dirección incompleta (ligada a un fix histórico, "Bucle para Envíos a Domicilio", ver CHANGELOG.md) | ✅ |
+| 7.3 | Se borró `js/checkout-shipping-toggle.js`: código muerto, ya reemplazado por `checkout-branch-ux.js` y sin ningún `wp_enqueue_script` que lo cargara | ✅ |
 
 ---
 

@@ -2,6 +2,18 @@
 
 ## Fork Julian Juan
 
+### 3.0.7.4 (fork, no oficial) — 2026-11
+Encontrado al instalar 3.0.7.3 en producción (8deoctubre.com.ar).
+- [Fix] Al tildar "Enviar a una dirección diferente" con envío **a domicilio**, el
+  checkbox se destildaba solo. Causa: `js/checkout-interactions.js` (legacy) forzaba
+  destildar y ocultar la sección para métodos "a domicilio", pisando a
+  `js/checkout-branch-ux.js` (que ya manejaba esto bien: ocultar sólo en sucursal, seguir
+  el checkbox en domicilio). Se quitó esa lógica duplicada/conflictiva; queda sólo la
+  guarda de dirección incompleta en `checkout-interactions.js` (ligada al fix histórico
+  "Bucle para Envíos a Domicilio en el Checkout").
+- [Chore] Se borra `js/checkout-shipping-toggle.js`: código muerto, ya reemplazado por
+  `checkout-branch-ux.js` y sin ningún `wp_enqueue_script` que lo cargara.
+
 ### 3.0.7.3 (fork, no oficial) — 2026-11
 Select de localidad/CP en el checkout y validación previa al etiquetado (ADR-001,
 `docs/DECISIONS.md`): un pedido real fue rechazado por Correo Argentino porque el código
