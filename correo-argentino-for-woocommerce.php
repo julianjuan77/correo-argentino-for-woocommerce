@@ -3,7 +3,7 @@
  * Plugin Name: Correo Argentino for WooCommerce (Fork Julian Juan)
  * Plugin URI: https://github.com/julianjuan77/correo-argentino-for-woocommerce
  * Description: Envíos con Correo Argentino en WooCommerce. Fork NO OFICIAL con correcciones: evita el fatal 500 por token 401, credenciales configurables por wp-config, comportamiento correcto de "otra dirección" por método, fallback de destino a facturación, timeouts y guardas de null, compatibilidad HPOS, reintento de token ante 401 (con fix de zona horaria) y mejoras de UX en envío a sucursal. Basado en la versión oficial 3.0.7 de Correo Argentino.
- * Version: 3.0.7.4
+ * Version: 3.0.7.5
  * Requires at least: 6.7
  * Requires PHP: 7.4
  * Requires Plugins: woocommerce

@@ -2,6 +2,17 @@
 
 ## Fork Julian Juan
 
+### 3.0.7.5 (fork, no oficial) — 2026-11
+Encontrado al probar un pedido real a CABA (CP 1425) en producción.
+- [Fix] El `<option>` del select de Localidad (ADR-001) usaba como `value` el índice de la
+  lista (0, 1, 2…) en vez del nombre real de la localidad. WooCommerce guardaba ese número
+  como `billing_city`/`shipping_city` (ej. "1" en vez de "Recoleta"), así que la validación
+  antes de generar la etiqueta rechazaba el pedido correctamente, pero por un dato mal
+  armado del lado del checkout, no por un error real del cliente. Ahora el `value` es el
+  nombre real de la localidad; dos localidades homónimas en distinto partido pueden
+  compartir `value` sin problema, porque el cambio se lee del `<option>` realmente
+  seleccionado, no de su valor.
+
 ### 3.0.7.4 (fork, no oficial) — 2026-11
 Encontrado al instalar 3.0.7.3 en producción (8deoctubre.com.ar).
 - [Fix] Al tildar "Enviar a una dirección diferente" con envío **a domicilio**, el

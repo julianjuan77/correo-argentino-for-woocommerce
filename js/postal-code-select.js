@@ -92,15 +92,18 @@ jQuery(function ($) {
 
     $select.empty().append(new Option('Seleccioná tu localidad...', '', true, true));
 
-    var matchedIndex = null;
-    localidades.forEach(function (entry, index) {
-      var opt = new Option(optionLabel(entry), String(index), false, false);
+    var matchedValue = null;
+    localidades.forEach(function (entry) {
+      // El value es el nombre real de la localidad: es lo que WooCommerce guarda como
+      // billing_city/shipping_city. Dos localidades homónimas en distinto partido pueden
+      // compartir value; no es un problema porque el cambio se lee del <option> realmente
+      // seleccionado (option:selected), no del value.
+      var opt = new Option(optionLabel(entry), entry.localidad, false, false);
       opt.dataset.cps = JSON.stringify(entry.cps);
-      opt.dataset.localidad = entry.localidad;
-      $select.append(opt);
-      if (matchedIndex === null && currentVal && entry.localidad.toUpperCase() === currentVal.toUpperCase()) {
-        matchedIndex = index;
+      if (matchedValue === null && currentVal && entry.localidad.toUpperCase() === currentVal.toUpperCase()) {
+        matchedValue = entry.localidad;
       }
+      $select.append(opt);
     });
 
     if ($select.hasClass('select2-hidden-accessible')) {
@@ -116,8 +119,8 @@ jQuery(function ($) {
       applyPostcode(prefix, cps);
     });
 
-    if (matchedIndex !== null) {
-      $select.val(String(matchedIndex)).trigger('change');
+    if (matchedValue !== null) {
+      $select.val(matchedValue).trigger('change');
       if (typeof $select.select2 === 'function') {
         $select.trigger('change.select2');
       }

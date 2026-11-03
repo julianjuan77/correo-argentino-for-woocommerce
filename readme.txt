@@ -4,7 +4,7 @@ Tags: woocommerce, shipping, logistics, argentina, correo argentino
 Requires at least: 6.7
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 3.0.7.4
+Stable tag: 3.0.7.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -51,6 +51,11 @@ Podés ofrecer a tus clientes diferentes modalidades de envío según sus necesi
 
 
 == Changelog ==
+
+= 3.0.7.5 (fork no oficial, Julian Juan) =
+* Corrige el select de Localidad del checkout: el valor que se guardaba como Ciudad era
+  un número interno (el índice de la lista) en vez del nombre real de la localidad, así
+  que los pedidos quedaban con una Ciudad inválida (ej. "1") y la etiqueta se rechazaba.
 
 = 3.0.7.4 (fork no oficial, Julian Juan) =
 * Corrige que se destildara solo "Enviar a una dirección diferente" al elegir envío a
