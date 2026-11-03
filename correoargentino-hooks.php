@@ -51,6 +51,14 @@ function corrarfo_filter_default_address_fields($address_fields)
     $address_fields['address_2']['placeholder'] = CORRARFO_STREET_NUMBER;
     $address_fields['address_2']['label'] = CORRARFO_STREET_NUMBER;
 
+    // Provincia antes que Localidad: el select de Localidad (ADR-001) depende de la
+    // Provincia elegida, así que tiene que venir después en el checkout.
+    $address_fields['state']['priority'] = 70;
+    $address_fields['city']['priority'] = 80;
+    // "Población" es la traducción genérica de WooCommerce para "Town/City"; ya no
+    // aplica porque el campo ahora lista localidades (ADR-001), no población.
+    $address_fields['city']['label'] = __('Localidad', 'correo-argentino-for-woocommerce');
+
     return $address_fields;
 }
 

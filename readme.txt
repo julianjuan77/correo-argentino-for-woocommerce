@@ -58,6 +58,8 @@ Podés ofrecer a tus clientes diferentes modalidades de envío según sus necesi
   correctamente. Ahora en domicilio el checkbox funciona normal; en sucursal se sigue
   ocultando como corresponde.
 * Se elimina `checkout-shipping-toggle.js` (código muerto, ya reemplazado).
+* Orden de campos: Provincia aparece antes que Localidad, y el campo de Localidad ya no
+  dice "Población".
 
 = 3.0.7.3 (fork no oficial, Julian Juan) =
 * Nuevo: select de Localidad dependiente de Provincia en el checkout (con el código postal

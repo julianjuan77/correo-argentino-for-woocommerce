@@ -13,6 +13,10 @@ Encontrado al instalar 3.0.7.3 en producción (8deoctubre.com.ar).
   "Bucle para Envíos a Domicilio en el Checkout").
 - [Chore] Se borra `js/checkout-shipping-toggle.js`: código muerto, ya reemplazado por
   `checkout-branch-ux.js` y sin ningún `wp_enqueue_script` que lo cargara.
+- [Fix] Orden de campos: Provincia ahora aparece antes que Localidad (el select de
+  Localidad depende de la Provincia elegida, ADR-001). El campo de Localidad dejaba de
+  decir "Población" (traducción genérica de WooCommerce para "Town/City") y pasa a decir
+  "Localidad".
 
 ### 3.0.7.3 (fork, no oficial) — 2026-11
 Select de localidad/CP en el checkout y validación previa al etiquetado (ADR-001,
