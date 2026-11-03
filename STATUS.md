@@ -1,6 +1,6 @@
 # Correo Argentino for WooCommerce (Fork Julian Juan) — Estado del proyecto
 
-> Plugin: `correo-argentino-for-woocommerce` 3.0.7.2 | WP 6.7+ | PHP 7.4+ | WooCommerce 8.9+
+> Plugin: `correo-argentino-for-woocommerce` 3.0.7.3 | WP 6.7+ | PHP 7.4+ | WooCommerce 8.9+
 > Repo: [correo-argentino-for-woocommerce](https://github.com/julianjuan77/correo-argentino-for-woocommerce)
 > Creado: 2026 (fork del oficial 3.0.7) · Última sesión: 2026-10-20 — Primera sesión de trabajo sobre el fork: arranca el endurecimiento de seguridad y estabilidad.
 

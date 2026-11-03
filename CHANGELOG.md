@@ -2,6 +2,24 @@
 
 ## Fork Julian Juan
 
+### 3.0.7.3 (fork, no oficial) — 2026-11
+Select de localidad/CP en el checkout y validación previa al etiquetado (ADR-001,
+`docs/DECISIONS.md`): un pedido real fue rechazado por Correo Argentino porque el código
+postal cargado no correspondía a la provincia elegida.
+- [Nuevo] Dataset propio de localidades/CP de Argentina (`Mock/postal-codes.json`), generado
+  desde el endpoint público del formulario de "Consulta de Código Postal" de Correo
+  Argentino, con tabla curada para CABA (el endpoint no da CP por localidad ahí).
+- [Nuevo] En el checkout **clásico** de WooCommerce, el campo Ciudad pasa a ser un select de
+  Localidad dependiente de la Provincia elegida, con el Código Postal derivado
+  automáticamente (o a elegir, si la localidad tiene más de un CP válido).
+- [Nuevo] Validación bloqueante de provincia/localidad/CP antes de registrar el envío en
+  Correo Argentino (PAQ.AR y MiCorreo), para envío a domicilio.
+- [Nuevo] Refresh mensual del dataset en segundo plano (WP-Cron), guardado aparte sin pisar
+  el archivo del plugin; si falla, se sigue usando el último dataset bueno.
+- [Nota] El checkout de **bloques** de WooCommerce (`wp:woocommerce/checkout`) se detecta y
+  se degrada al campo de texto libre actual: un swap de DOM ahí no sincroniza con el store
+  interno de WooCommerce. La validación previa al etiquetado sigue aplicando igual.
+
 ### 3.0.7.2 (fork, no oficial) — 2026-07
 Basado en la versión oficial 3.0.7. Correcciones y mejoras del fork:
 - [Fix] `try/catch` en el cálculo de tarifas: un token 401 ya no tira un fatal 500

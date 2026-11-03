@@ -4,7 +4,7 @@ Tags: woocommerce, shipping, logistics, argentina, correo argentino
 Requires at least: 6.7
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 3.0.7.2
+Stable tag: 3.0.7.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -51,6 +51,14 @@ Podés ofrecer a tus clientes diferentes modalidades de envío según sus necesi
 
 
 == Changelog ==
+
+= 3.0.7.3 (fork no oficial, Julian Juan) =
+* Nuevo: select de Localidad dependiente de Provincia en el checkout (con el código postal
+  derivado automáticamente), para evitar que Correo Argentino rechace la etiqueta por un CP
+  que no corresponde a la provincia cargada.
+* Nuevo: validación de provincia/localidad/código postal antes de registrar el envío en
+  Correo Argentino (PAQ.AR y MiCorreo), con dataset propio actualizado mensualmente.
+* Ver el changelog completo y detallado en https://github.com/julianjuan77/correo-argentino-for-woocommerce/blob/main/CHANGELOG.md
 
 = 3.0.7.2 (fork no oficial, Julian Juan) =
 * Corrige un fatal 500 en el checkout cuando la API devuelve un token vencido (401).
