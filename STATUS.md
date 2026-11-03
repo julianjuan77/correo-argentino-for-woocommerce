@@ -117,6 +117,7 @@ no correspondía a la provincia elegida. Detalle y alternativas descartadas en `
 | 6.4 | Select Localidad (dependiente de Provincia, CP derivado) en el checkout **clásico** (`js/postal-code-select.js` + AJAX `corrarfo_get_localidades`) — probado en browser contra `sandbox`: Pergamino → CP 2700 autocompletado; CABA/Recoleta → select de 57 CPs | ✅ |
 | 6.5 | **Checkout de bloques** (`wp:woocommerce/checkout`, React): se probó en vivo y el swap de DOM por jQuery queda visualmente puesto pero no se sincroniza con el store interno (`wc/store/cart`) — el pedido se mandaría con Ciudad/CP vacíos. Se decidió degradar: `corrarfo_checkout_uses_block_checkout()` detecta el bloque y en ese caso NO se enqueuea el script, el campo queda como texto libre (sin romper nada). La validación antes de generar la etiqueta (6.3) sigue aplicando igual en ambos casos | ✅ (degradado a propósito) |
 | 6.6 | Integración nativa con el checkout de bloques (vía `wc/store/checkout`/`setBillingAddress`, o la API de "additional fields" de WooCommerce Blocks) | ⬜ pendiente, no pedida todavía |
+| 6.7 | Release [`v3.0.7.3`](https://github.com/julianjuan77/correo-argentino-for-woocommerce/releases/tag/v3.0.7.3) en GitHub con el zip adjunto | ✅ |
 
 **Pendiente de uso real:** uninstall.php y `deactivation_hook` ya limpian la `option` y el cron;
 falta validar el refresh de WP-Cron corriendo en un sitio real (el `wp_next_scheduled` se
