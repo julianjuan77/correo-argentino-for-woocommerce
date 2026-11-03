@@ -12,6 +12,15 @@ Encontrado al probar un pedido real a CABA (CP 1425) en producción.
   nombre real de la localidad; dos localidades homónimas en distinto partido pueden
   compartir `value` sin problema, porque el cambio se lee del `<option>` realmente
   seleccionado, no de su valor.
+- [Fix] Al tildar "¿Enviar a una dirección diferente?" se destildaba solo a los pocos
+  segundos. Causa: `js/checkout-interactions.js` seguía vivo sólo por su guarda de
+  "dirección incompleta" (ligada a un fix histórico, "Bucle para Envíos a Domicilio"), que
+  corría en cada `updated_checkout` y destildaba el checkbox si faltaba cualquier dato de
+  facturación (email, teléfono, localidad…) — en la práctica, siempre que el cliente llega a
+  ese checkbox antes de terminar de cargar la facturación. El aviso informativo real de
+  "completá la dirección para calcular el envío" vive aparte, en
+  `Classes/correoargentino-shipping-method.php`, y sigue funcionando igual. Se elimina
+  `checkout-interactions.js` por completo.
 
 ### 3.0.7.4 (fork, no oficial) — 2026-11
 Encontrado al instalar 3.0.7.3 en producción (8deoctubre.com.ar).

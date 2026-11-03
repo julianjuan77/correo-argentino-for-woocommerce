@@ -729,18 +729,5 @@ add_action('wp_enqueue_scripts', function () {
 }, 20);
 
 
-add_action('wp_enqueue_scripts', function () {
-    if (is_checkout()) {
-        wp_enqueue_script(
-            'correoargentino-checkout-interactions',
-            CORRARFO_PLUGIN_URL . 'js/checkout-interactions.js',
-            ['jquery'],
-            '1.0',
-            true
-        );
-    }
-});
-
-
 
 
