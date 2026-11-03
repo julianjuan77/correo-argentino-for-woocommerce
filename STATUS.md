@@ -132,6 +132,8 @@ confirmó en `sandbox`, pero el callback no se disparó todavía porque el inter
 | 7.1 | El select de localidad/CP (tarea 6.4) no aparecía: las llamadas AJAX a `admin-ajax.php` devolvían 401. Causa externa al plugin (regla de seguridad/firewall del sitio bloqueando `/wp-admin/` para visitantes no logueados, incluido `admin-ajax.php`) — no es un bug de código, pendiente de que el cliente agregue la excepción | 🔒 bloqueado (externo al plugin) |
 | 7.2 | Al tildar "enviar a una dirección diferente" con envío **a domicilio**, se destildaba solo. Causa: `js/checkout-interactions.js` (legacy) forzaba destildar+ocultar para métodos "a domicilio", pisando a `js/checkout-branch-ux.js` (el que sí debía manejar esto: ocultar sólo en sucursal, seguir el checkbox en domicilio). Se quitó esa lógica de `checkout-interactions.js`, dejando sólo su guarda de dirección incompleta (ligada a un fix histórico, "Bucle para Envíos a Domicilio", ver CHANGELOG.md) | ✅ |
 | 7.3 | Se borró `js/checkout-shipping-toggle.js`: código muerto, ya reemplazado por `checkout-branch-ux.js` y sin ningún `wp_enqueue_script` que lo cargara | ✅ |
+| 7.4 | Orden de campos: Provincia antes que Localidad (`correoargentino-hooks.php`, prioridades 70/80) — el select de Localidad depende de la Provincia elegida. El campo de Localidad dejó de decir "Población" (traducción genérica de WooCommerce para "Town/City") y pasa a decir "Localidad" | ✅ |
+| 7.5 | Release [`v3.0.7.4`](https://github.com/julianjuan77/correo-argentino-for-woocommerce/releases/tag/v3.0.7.4) en GitHub con el zip adjunto (incluye 7.2-7.4) | ✅ |
 
 ---
 
